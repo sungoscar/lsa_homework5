@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
+<title>lsa作業</title>
+</head>
+<body>
+<h1>問題1</h1>
+<p>它是真的root但只在docker的權限裡，並不代表可以存取整台主機</p>
+<h1>問題2</h1>
+<img src="123.jpg" width="500">
+<br>
+<img src="1234.png" width="500">
+<br>
+<p>
+<h2>步驟</h2>
+<ul>下載 Nginx Image：sudo docker pull nginx </ul>
+<ul>建立並啟動 Nginx Container：
+
+sudo docker run -d --name nginx-homework -p 8080:80 nginx </ul>
+<ul>確認容器執行狀態：
+
+sudo docker ps </ul>
+<ul>使用 curl 或瀏覽器連線：
+
+curl http://localhost:8080
+
+curl -I http://localhost:8080</ul>
+<h2>Why</h2>
+因為 Docker 可以直接使用 Nginx 映像檔建立容器，不需要另外安裝 Nginx。透過 -p 8080:80，把電腦的 8080 埠連接到容器的 80 埠，所以我們就能透過瀏覽器看到 Nginx 的網頁，代表容器已經成功運作。
+</p>
+</body>
+</html>
